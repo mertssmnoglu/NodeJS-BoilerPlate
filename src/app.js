@@ -1,6 +1,5 @@
 // Imports
-const express = require("express")
-const app = express()
+const app = require("express")()
 const apiRouter = require("./routes/route.js")
 require("dotenv-safe/config.js")
 
