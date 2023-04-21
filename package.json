@@ -4,7 +4,8 @@
     "description": "A nodejs boilerplate made by mertssmnoglu.",
     "main": "./src/app.js",
     "scripts": {
-        "start": "nodemon ./src/app.js"
+        "dev": "nodemon",
+        "prod": "node ./src/app.js"
     },
     "keywords": [
         "nodejs",
@@ -12,7 +13,11 @@
         "boilerplate",
         "structure"
     ],
-    "author": "mertssmnoglu",
+    "author": {
+        "name": "mertssmnoglu",
+        "email": "mertssmnoglu@gmail.com",
+        "url": "https://links.dev/mertssmnoglu"
+    },
     "license": "ISC",
     "homepage": "https://github.com/mertssmnoglu/NodeJS-Boilerplate#readme",
     "repository": {
