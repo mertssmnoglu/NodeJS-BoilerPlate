@@ -1,15 +1,24 @@
 // Imports
-const app = require("express")()
-const apiRouter = require("./routes/route.js")
+const express = require("express")
+const app = express()
+const bodyParser = require("body-parser")
+const cors = require("cors")
+const { logger } = require("./middlewares")
 require("dotenv-safe/config.js")
 
-// /api route
-app.use("/api", apiRouter)
+// MiddleWares
+app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+app.use(express.static("public"))
+app.use(logger)
 
-// / route
+// Routes
+const apiRouter = require("./routes/route.js")
 app.get("/", (req, res) => {
     res.send("/")
 })
+app.use("/api", apiRouter)
 
 // 404
 app.get("*", function (req, res) {
